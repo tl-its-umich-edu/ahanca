@@ -1,0 +1,106 @@
+[
+  {
+    "term": "ahanca:envelope",
+    "domain": "ahanca:root",
+    "domain-comment": "which term may contain this one.  'ahanca:root' predefined",
+    "mapping": [
+      {
+        "specification": [
+          "caliper-1p0",
+          "caliper-1p1"
+        ],
+        "path": "$_root[isArray()]",
+        "path-comment": "$_root predefined immutable.  if root is array, it's an envelope",
+        "name": "$envelope"
+      }
+    ]
+  },
+  {
+    "term": "ahanca:event",
+    "domain": [
+      "ahanca:root",
+      "ahanca:envelope"
+    ],
+    "mapping": [
+      {
+        "specification": [
+          "caliper-1p0",
+          "caliper-1p1"
+        ],
+        "path": "$envelope['type'~='*Event$']",
+        "path-comment": "objects in current envelope (root if none?) whose 'type' property value matches regex",
+        "name": "$event",
+        "name-comment": "assign matching object(s) to $event"
+      }
+    ]
+  },
+  {
+    "term": "ahanca:entity",
+    "domain": [
+      "ahanca:root",
+      "ahanca:envelope",
+      "ahanca:event",
+      "ahanca:entity"
+    ],
+    "domain-comment": "entity may be bare or in envelope (i.e. describe), event, or other entity",
+    "mapping": [
+      {
+        "specification": [
+          "caliper-1p0",
+          "caliper-1p1"
+        ],
+        "path": "$envelope['type'~='*Event$']",
+        "path-comment": "objects in current envelope (root if none?) whose 'type' property value matches regex",
+        "name": "$event",
+        "name-comment": "assign matching object(s) to $event"
+      }
+    ]
+  },
+  {
+    "term": "ahanca:eventId",
+    "domain": "ahanca:event",
+    "mapping": [
+      {
+        "specification": "caliper-1p0",
+        "path": null,
+        "path-comment": "null or missing means not supported"
+      },
+      {
+        "specification": "caliper-1p1",
+        "path": "$event.id"
+      },
+      {
+        "specification": "xapi",
+        "path": "$_root.id"
+      }
+    ]
+  },
+  {
+    "term": "ahanca:actor",
+    "domain": "ahanca:event",
+    "mapping": [
+      {
+        "specification": [
+          "caliper-1p0",
+          "caliper-1p1"
+        ],
+        "path": "$event.actor"
+      }
+    ]
+  },
+  {
+    "term": "ahanca:entityIds",
+    "domain": "ahanca:entity",
+    "path-comment": "$object means any object",
+    "mapping": [
+      {
+        "specification": "caliper-1p0",
+        "path": "$object['@id']"
+      },
+      {
+        "specification": "caliper-1p1",
+        "path": "$object.id"
+      }
+    ]
+  }
+]

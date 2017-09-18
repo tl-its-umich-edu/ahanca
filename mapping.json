@@ -61,16 +61,22 @@
     "domain": "ahanca:event",
     "mapping": [
       {
-        "specification": "caliper-1p0",
+        "specification": [
+          "caliper-1p0"
+        ],
         "path": null,
         "path-comment": "null or missing means not supported"
       },
       {
-        "specification": "caliper-1p1",
+        "specification": [
+          "caliper-1p1"
+        ],
         "path": "$event.id"
       },
       {
-        "specification": "xapi",
+        "specification": [
+          "xapi"
+        ],
         "path": "$_root.id"
       }
     ]
@@ -94,11 +100,15 @@
     "path-comment": "$object means any object",
     "mapping": [
       {
-        "specification": "caliper-1p0",
+        "specification": [
+          "caliper-1p0"
+        ],
         "path": "$object['@id']"
       },
       {
-        "specification": "caliper-1p1",
+        "specification": [
+          "caliper-1p1"
+        ],
         "path": "$object.id"
       }
     ]

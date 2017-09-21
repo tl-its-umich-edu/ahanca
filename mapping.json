@@ -5,12 +5,12 @@
     "domain-comment": "which term may contain this one.  'ahanca:root' predefined",
     "mapping": [
       {
-        "specification": [
+        "spec": [
           "caliper-1p0",
           "caliper-1p1"
         ],
-        "path": "$_root[isArray()]",
-        "path-comment": "$_root predefined immutable.  if root is array, it's an envelope",
+        "jq-filter": "$_root[isArray()]",
+        "jq-filter-comment": "$_root predefined immutable.  if root is array, it's an envelope",
         "name": "$envelope"
       }
     ]
@@ -23,12 +23,12 @@
     ],
     "mapping": [
       {
-        "specification": [
+        "spec": [
           "caliper-1p0",
           "caliper-1p1"
         ],
-        "path": "$envelope['type'~='*Event$']",
-        "path-comment": "objects in current envelope (root if none?) whose 'type' property value matches regex",
+        "jq-filter": "$envelope['type'~='*Event$']",
+        "jq-filter-comment": "objects in current envelope (root if none?) whose 'type' property value matches regex",
         "name": "$event",
         "name-comment": "assign matching object(s) to $event"
       }
@@ -45,12 +45,12 @@
     "domain-comment": "entity may be bare or in envelope (i.e. describe), event, or other entity",
     "mapping": [
       {
-        "specification": [
+        "spec": [
           "caliper-1p0",
           "caliper-1p1"
         ],
-        "path": "$envelope['type'~='*Event$']",
-        "path-comment": "objects in current envelope (root if none?) whose 'type' property value matches regex",
+        "jq-filter": "$envelope['type'~='*Event$']",
+        "jq-filter-comment": "objects in current envelope (root if none?) whose 'type' property value matches regex",
         "name": "$event",
         "name-comment": "assign matching object(s) to $event"
       }
@@ -61,23 +61,23 @@
     "domain": "ahanca:event",
     "mapping": [
       {
-        "specification": [
+        "spec": [
           "caliper-1p0"
         ],
-        "path": null,
-        "path-comment": "null or missing means not supported"
+        "jq-filter": null,
+        "jq-filter-comment": "null or missing means not supported"
       },
       {
-        "specification": [
+        "spec": [
           "caliper-1p1"
         ],
-        "path": "$event.id"
+        "jq-filter": "$event.id"
       },
       {
-        "specification": [
+        "spec": [
           "xapi"
         ],
-        "path": "$_root.id"
+        "jq-filter": "$_root.id"
       }
     ]
   },
@@ -86,30 +86,30 @@
     "domain": "ahanca:event",
     "mapping": [
       {
-        "specification": [
+        "spec": [
           "caliper-1p0",
           "caliper-1p1"
         ],
-        "path": "$event.actor"
+        "jq-filter": "$event.actor"
       }
     ]
   },
   {
     "term": "ahanca:entityIds",
     "domain": "ahanca:entity",
-    "path-comment": "$object means any object",
+    "jq-filter-comment": "$object means any object",
     "mapping": [
       {
-        "specification": [
+        "spec": [
           "caliper-1p0"
         ],
-        "path": "$object['@id']"
+        "jq-filter": "$object['@id']"
       },
       {
-        "specification": [
+        "spec": [
           "caliper-1p1"
         ],
-        "path": "$object.id"
+        "jq-filter": "$object.id"
       }
     ]
   }

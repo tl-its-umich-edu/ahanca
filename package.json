@@ -12,7 +12,9 @@
     "ahanca": "./ahanca.js"
   },
   "dependencies": {
+    "jq-web": "^0.1.2",
     "jspath": "^0.3.4",
+    "node-jq": "^0.7.0",
     "yargs": "^9.0.1"
   }
 }

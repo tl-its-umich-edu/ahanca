@@ -1,4 +1,4 @@
-# Intellij
+# IntelliJ IDEA
 .idea/
 *.iml
 *.ipr
@@ -6,8 +6,11 @@
 *.uml
 out/
 
-# Mac
+# macOS
 .DS_Store
 
 # Sublime
 *.sublime*
+
+# Node.js
+node_modules

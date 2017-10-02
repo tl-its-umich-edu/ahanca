@@ -1,7 +1,9 @@
 [
   {
     "term": "ahanca:envelope",
-    "domain": "ahanca:root",
+    "domain": [
+      "ahanca:root"
+    ],
     "domain-comment": "which term may contain this one.  'ahanca:root' predefined",
     "jq-filter-comment": "$_root predefined immutable.  if root is array, it's an envelope",
     "mapping": [
@@ -62,7 +64,9 @@
   },
   {
     "term": "ahanca:eventId",
-    "domain": "ahanca:event",
+    "domain": [
+      "ahanca:event"
+    ],
     "jq-filter-comment": "null or missing means not supported",
     "mapping": [
       {
@@ -81,7 +85,9 @@
   },
   {
     "term": "ahanca:actor",
-    "domain": "ahanca:event",
+    "domain": [
+      "ahanca:event"
+    ],
     "mapping": [
       {
         "spec": "caliper-1p0",
@@ -95,7 +101,9 @@
   },
   {
     "term": "ahanca:entityIds",
-    "domain": "ahanca:entity",
+    "domain": [
+      "ahanca:entity"
+    ],
     "jq-filter-comment": "$object means any object",
     "mapping": [
       {

@@ -1,0 +1,21 @@
+{
+  "name": "ahanca",
+  "version": "0.0.1",
+  "description": "demo",
+  "main": "ahanca.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lance E Sloan",
+  "license": "ISC",
+  "bin": {
+    "ahanca": "./ahanca.js"
+  },
+  "dependencies": {
+    "jq-web": "^0.1.2",
+    "jspath": "^0.3.4",
+    "lodash": "^4.17.4",
+    "node-jq": "^0.7.0",
+    "yargs": "^9.0.1"
+  }
+}
